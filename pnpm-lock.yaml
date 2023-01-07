@@ -1,11 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
+  gsap: ^3.11.4
   parcel-bundler: ^1.12.5
   three: ^0.148.0
   typescript: ^4.9.4
 
 dependencies:
+  gsap: 3.11.4
   three: 0.148.0
 
 devDependencies:
@@ -2898,6 +2900,10 @@ packages:
       brfs: 1.6.1
       unicode-trie: 0.3.1
     dev: true
+
+  /gsap/3.11.4:
+    resolution: {integrity: sha512-McHhEguHyExMMnjqKA8G+7TvxmlKQGMbjgwAilnFe1e4id7V/tFveRQ2YMZhTYu0oxHGWvbPltdVYQOu3z1SCA==}
+    dev: false
 
   /har-schema/2.0.0:
     resolution: {integrity: sha512-Oqluz6zhGX8cyRaTQlFMPw80bSJVG2x/cFb8ZPhUILGgHka9SsokCCOQgpveePerqidZOrT14ipqfJb7ILcW5Q==}
