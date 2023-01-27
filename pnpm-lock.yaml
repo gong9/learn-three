@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/three': ^0.148.1
   gsap: ^3.11.4
   parcel-bundler: ^1.12.5
   three: ^0.148.0
@@ -11,6 +12,7 @@ dependencies:
   three: 0.148.0
 
 devDependencies:
+  '@types/three': 0.148.1
   parcel-bundler: 1.12.5
   typescript: 4.9.4
 
@@ -1316,6 +1318,16 @@ packages:
 
   /@types/q/1.5.5:
     resolution: {integrity: sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==}
+    dev: true
+
+  /@types/three/0.148.1:
+    resolution: {integrity: sha512-gZwIyTBMxKXqJHXmZ0dzvDieuQ4hz8MPNHtkRrAwER/xPlAh9eP2WIfaolvQY+wJAzlNV5a9ceS4JT+i/jybsw==}
+    dependencies:
+      '@types/webxr': 0.5.1
+    dev: true
+
+  /@types/webxr/0.5.1:
+    resolution: {integrity: sha512-xlFXPfgJR5vIuDefhaHuUM9uUgvPaXB6GKdXy2gdEh8gBWQZ2ul24AJz3foUd8NNKlSTQuWYJpCb1/pL81m1KQ==}
     dev: true
 
   /abab/2.0.6:

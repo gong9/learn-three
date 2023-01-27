@@ -6,12 +6,14 @@ import {
     PCDLoader
 } from 'three/examples/jsm/loaders/PCDLoader'
 
+// create scene
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
+
+// create camera
 const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.01, 900);
 camera.up.set(0, 0, 1);
 camera.position.set(0, 0, 20)
-
-const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x000000);
 scene.add(camera);
 
 const renderer = new THREE.WebGLRenderer({
@@ -25,20 +27,18 @@ new OrbitControls(camera, renderer.domElement);
 document.body.appendChild(renderer.domElement);
 
 const loader = new PCDLoader();
-console.log(loader);
 
+// 加载pcd，创建点云
 loader.load('./demo.pcd', function (points) {
     scene.add(points);
-    // mapinit()
 });
 
 var axisHelper = new THREE.AxesHelper(110);
 scene.add(axisHelper)
-
 
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
 }
 
-animate();
+animate()
