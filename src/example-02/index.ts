@@ -11,7 +11,7 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
  const renderer = new THREE.WebGLRenderer();
 
  // 创建轨道控制器
- const controls = new OrbitControls( camera, renderer.domElement );
+ new OrbitControls( camera, renderer.domElement );
  // 创建坐标辅助器
  const axesHelper = new THREE.AxesHelper( 5 );
 
