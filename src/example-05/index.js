@@ -19,6 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
         0, 0, 0, 1,
     ]);
 
+    /**
+     * 重新渲染
+     * @param {*} ctx 
+     * @param {*} o 
+     * @param {*} t 
+     * @returns 
+     */
     function reDraw(ctx, o, t) {
         const out = new Float32Array([
             0, 0, 0, 0,
@@ -60,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         isDrag = false;
     });
 
+
     $app.addEventListener("wheel", (e) => {
         const {
             clientX,
@@ -79,3 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ov = reDraw(ctx, ov, t);
     });
 });
+
+
+// 图像的转化需要怎么去抽象

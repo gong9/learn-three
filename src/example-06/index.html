@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" />
+
+    <script>
+        const canvas = document.querySelector('canvas')
+        const gl = canvas.getContext('webgl')
+
+        // 获取顶点着色器源码
+        const vertexShaderSource = `
+        void main(){
+             //声明顶点位置
+             gl_Position = vec4(0.0, 0.0, 0.0, 1.0);
+             //声明要绘制的点的大小。
+             gl_PointSize = 10.0;
+         }`
+        // 创建顶点着色器对象
+        var vertexShader = gl.createShader(gl.VERTEX_SHADER);
+        // 将源码分配给顶点着色器对象
+        gl.shaderSource(vertexShader, vertexShaderSource);
+        // 编译顶点着色器程序
+        gl.compileShader(vertexShader);
+
+        // 获取片元着色器源码
+        var fragmentShaderSource = `
+        void main(){
+            //设置像素颜色为红色
+           gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0); 
+       }
+        `
+        // 创建片元着色器程序
+        var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+        // 将源码分配给片元着色器对象
+        gl.shaderSource(fragmentShader, fragmentShaderSource);
+        // 编译片元着色器
+        gl.compileShader(fragmentShader);
+
+        //创建着色器程序
+        var program = gl.createProgram();
+        //将顶点着色器挂载在着色器程序上。
+        gl.attachShader(program, vertexShader);
+        //将片元着色器挂载在着色器程序上。
+        gl.attachShader(program, fragmentShader);
+        //链接着色器程序
+        gl.linkProgram(program);
+
+        // 使用程序
+        gl.useProgram(program);
+
+        // 清空画布颜色为黑色
+        gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        //绘制点
+        gl.drawArrays(gl.POINTS, 0, 1);
+    </script>
+</body>
+
+</html>
