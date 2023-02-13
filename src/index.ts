@@ -1,1 +1,1 @@
-import './example-04'
+import './example-06/test01'  // webgl
